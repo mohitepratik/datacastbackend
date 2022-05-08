@@ -1,6 +1,12 @@
 const express = require("express");
 // const config = require("config");
 
+var cors = require('cors')
+
+
+
+
+
 const bp = require("body-parser");
 const req = require("express/lib/request");
 const res = require("express/lib/response");
@@ -9,6 +15,7 @@ const connectDB = require("./config/db");
 
 const app = express();
 // const path = require("path");
+app.use(cors())
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
